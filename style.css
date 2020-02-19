@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: coral;
+    position: fixed;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+ .nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+    text-decoration: none;
+ }
+
+ #welcome-section {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: auto;
+     height: 100vh;
+     font-size: x-large; 
+     background-color: darkcyan;
+     
+ }
+
+ h1, h3 {
+     color: white;
+     text-align: center;
+ }
+ h2 {
+    color: black;
+    text-align: center;
+    margin: 50px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#project {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+ #project-list {
+     display: flex;
+     justify-content: space-around;
+ }
+
+ #contact {
+     display: flex;
+     justify-content: space-evenly;
+     padding: 1.5rem;
+     margin: 1.5rem;
+     width: auto;
+     flex-wrap: wrap;
+ }
+
+ a {
+    text-decoration: none;
+ }
+
+ #contact a {
+     
+     margin: 1rem;
+ }
+ i {
+     font-size: 2rem;
+ }
+
+ footer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1rem;
+     height: 60px;
+     background-color: darkcyan;
+     color: #fff;
+     text-align: center;
+
+ }
+
+ div.disabled {
+     overflow-x: hidden;
+ }
+
+ 
+ @media (max-width: 75rem) {
+     html{
+         font-size: 58%;
+     }
+ }
