@@ -1,0 +1,33 @@
+* {
+    background-color: grey; 
+    color: white;
+    
+}
+.button {
+    
+    width: 800px;
+    height: 40px;
+    color: red;
+    background-color: black;
+}
+
+.starwars-body {
+    width: 100%;
+    margin: 50px;
+}
+
+.character {
+    
+}
+
+h3 {
+    
+    color: #f483f3;
+
+}
+
+.table {
+    display: flex;
+    margin: 40px;
+    border-color: black;
+}
