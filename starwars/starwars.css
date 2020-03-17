@@ -11,7 +11,7 @@ header, footer {
 }
 .button {
     
-    width: 800px;
+    width: 200px;
     height: 40px;
     color: red;
     background-color: black;
@@ -22,13 +22,15 @@ header, footer {
     margin: 50px;
 }
 
-.character {
-    
+.characterPic {
+    height: 425px;
+    width: 300px;
+    margin-right: 75px;
 }
 
 h3 {
     
-    color: #f483f3;
+    color: black;
 
 }
 
@@ -37,4 +39,17 @@ h3 {
     justify-content: space-between;
     margin: 40px;
     border-color: black;
+    background-color:
+}
+
+.shipName {
+    margin-left: 50px;
+    
+}
+
+.shipPics {
+    height: 150px;
+    width: 150px;
+    margin-left: 15px;
+
 }

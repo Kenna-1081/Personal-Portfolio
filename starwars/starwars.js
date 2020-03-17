@@ -5,49 +5,46 @@ import {people} from '../data/people.js';
 
 import {starships} from '../data/starships.js';
 
-const starShips = starships;//.filter(ship => ship.pilots);
+const starShips = starships;
 
-const maleCharacters = people.filter(person => person.gender === "male")
-//console.log(maleCharacters);
+const maleCharacters = people.filter(person => person.gender === "male");
+ 
+const femaleCharacters = people.filter(person => person.gender === "female");
 
-const femaleCharacters = people.filter(person => person.gender === "female")
-//console.log(femaleCharacters);
+const otherCharacters = people.filter(person => person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite");
 
-const otherCharacters = people.filter(person => person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite")
-//console.log(otherCharacters);
-
-let maleButton = document.querySelector('#maleButton')
-let femaleButton = document.querySelector('#femaleButton')
-let otherButton = document.querySelector('#otherButton')
-let starShipsButton = document.querySelector('#starShipsButton')
+let maleButton = document.querySelector('#maleButton');
+let femaleButton = document.querySelector('#femaleButton');
+let otherButton = document.querySelector('#otherButton');
+let starShipsButton = document.querySelector('#starShipsButton');
  
 maleButton.addEventListener("click", function ( event ) {
     document.querySelector("#displayCharacters").innerHTML = '';
     maleCharacters.forEach(addToDisplay);
-    console.log(document.querySelector('#displayCharacters').innerHTML);
-});
+})
 
 femaleButton.addEventListener("click", function ( event ) {
     document.querySelector("#displayCharacters").innerHTML = '';
     femaleCharacters.forEach(addToDisplay);
-    console.log(document.querySelector('#displayCharacters').innerHTML);
-});
+})
 
 otherButton.addEventListener("click", function ( event ) {
     document.querySelector("#displayCharacters").innerHTML = '';
     otherCharacters.forEach(addToDisplay);
-    console.log(document.querySelector('#displayCharacters').innerHTML);
-});
+})
 
 starShipsButton.addEventListener("click", function ( event ) {
-    document.querySelector("#displayShips").innerHTML = '';
-    starShips.forEach(addToDisplay);
-    console.log(document.querySelector("#displayShips").innerHTML)
-})
+    document.querySelector("#displayCharacters").innerHTML = '';
+    starShips.forEach(addToShipDisplay);    
+});
+
+function addToShipDisplay(ship, index) {
+    var shipNumber = getShipNumber(ship.url);
+    document.querySelector("#displayCharacters").innerHTML += '<img class="shipPics" src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt="">';
+}
 
 function addToDisplay(person, index) {
     var personNumber = getPersonNumber(person.url);
-    
     document.querySelector("#displayCharacters").innerHTML += '<table class="table" width="80%"><tr>' + 
     addImageToTable(person, personNumber) + 
     addPersonInformationToTable(person, personNumber) + 
@@ -56,12 +53,12 @@ function addToDisplay(person, index) {
 }
 function addImageToTable(person, personNumber) {
    var returnString = '<td>' + 
-   '<img src="https://starwars-visualguide.com/assets/img/characters/' + personNumber + '.jpg" alt="' + person.name + '"></td>';
+   '<img class="characterPic" src="https://starwars-visualguide.com/assets/img/characters/' + personNumber + '.jpg" alt="' + person.name + '"></td>';
     return returnString;
 }
 
 function addPersonInformationToTable(person, personNumber) {
-    return '<td><h2>' + person.name +
+    return '<td class="info"><h2>' + person.name +
     "</h2><br><br>Height: " + person.height + 
     "<br><br>Hair color: " + person.hair_color + 
     "<br><br>Skin Color: " + person.skin_color + 
@@ -73,8 +70,9 @@ function addStarshipInformationToTable(person, personNumber) {
     for (var i = 0; i < person.starships.length; i++){
         var shipNumber = getShipNumber(person.starships[i]);
         returnHTML += '<tr>';
-        returnHTML += '<td>' + getStarshipName(shipNumber) + '</td>';
-        returnHTML += '<td><img src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt="spaceship"><td></tr>';
+        returnHTML += '<td><h3 class="shipName">' + getStarshipName(shipNumber) + '</h3></td>';
+        returnHTML += '<td><img class="shipPics" src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt=""><td></tr>';
+        //returnHTML += '<td><img class="shipPics" src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt="This is not the image you are looking for"><td></tr>';
     } 
     returnHTML += '</table></td>';
     return returnHTML;
