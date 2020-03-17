@@ -3,6 +3,12 @@
     color: white;
     
 }
+
+header, footer {
+    display: flex;
+    justify-content: center;
+
+}
 .button {
     
     width: 800px;
@@ -28,6 +34,7 @@ h3 {
 
 .table {
     display: flex;
+    justify-content: space-between;
     margin: 40px;
     border-color: black;
 }
