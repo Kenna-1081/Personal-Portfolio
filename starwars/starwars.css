@@ -26,6 +26,7 @@ header, footer {
     height: 425px;
     width: 300px;
     margin-right: 75px;
+    border-style: inset;
 }
 
 h3 {
@@ -50,6 +51,7 @@ h3 {
 .shipPics {
     height: 150px;
     width: 150px;
-    margin-left: 15px;
+    margin: 20px;
+    border-style: inset;
 
 }
