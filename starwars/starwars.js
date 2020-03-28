@@ -5,7 +5,7 @@ import {people} from '../data/people.js';
 
 import {starships} from '../data/starships.js';
 
-//import {planets} from '../data/planets.js';
+import {planets} from '../data/planets.js';
 
 const starShips = starships;
 
@@ -21,7 +21,7 @@ let maleButton = document.querySelector('#maleButton');
 let femaleButton = document.querySelector('#femaleButton');
 let otherButton = document.querySelector('#otherButton');
 let starShipsButton = document.querySelector('#starShipsButton');
-let planets = document.querySelector('#planets');
+let planet = document.querySelector('#planets');
  
 maleButton.addEventListener("click", function ( event ) {
     document.querySelector("#displayCharacters").innerHTML = '';
@@ -43,15 +43,21 @@ starShipsButton.addEventListener("click", function ( event ) {
     starShips.forEach(addToShipDisplay);    
 });
 
-planetsButton.addEventListener("click", function ( event ) {
+planetButton.addEventListener("click", function ( event ) {
     document.querySelector("#displayCharacters").innerHTML = '';
     planets.forEach(addToPlanetDisplay);
 });
 
-function addToPlanetDisplay(planets, index) {
-    var shipNumber = getShipNumber(planets.url);
+/*function addToPlanetDisplay(ship, index) {
+    var shipNumber = getShipNumber(ship.url);
     document.querySelector("#displayCharacters").innerHTML += '<img class="planetPics" src="https://starwars-visualguide.com/assets/img/planets/' + shipNumber + '.jpg" alt="">';
-}
+}*/
+
+function addToPlanetDisplay(personNumber) {
+    var returnString = 
+    '<img class="characterPic" src="https://starwars-visualguide.com/assets/img/planets/' + personNumber + '.jpg" alt=""';
+     return returnString;
+} 
 
 function addToShipDisplay(ship, index) {
     var shipNumber = getShipNumber(ship.url);
