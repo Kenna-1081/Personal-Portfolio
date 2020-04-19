@@ -1,5 +1,10 @@
 let pokeContainer = document.querySelector('.pokemon')
 
+DButton.addEventListener("click", function ( event ) {
+    document.querySelector("#congressmen").innerHTML = '';
+    DCharacters.forEach(addToDisplay);
+})
+
 function  getPokeData(url) {
     fetch(url).then(function (response) {
         response.json().then(function (pokemon) {
