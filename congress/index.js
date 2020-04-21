@@ -14,7 +14,7 @@ function simplifiedSenators(senatorArray) {
             name: `${senator.first_name}${middlename}${senator.last_name}`,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
             seniority: parseInt(senator.seniority, 10),
-            twitterAccount: senator.twitter_account;
+            twitterAccount: senator.twitter_account,
         }
     })
 }
@@ -48,6 +48,6 @@ const mostSeniority = simplefiedSenators(republicans).reduce(
 const twitter = simplifiedSenators(democrates).reduce((acc, senator) => acc.twitterAccount)
 
 console.log(mostSeniority)
-console.log(twitter)
+
 
 populateContainer(mappedSenators);
