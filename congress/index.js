@@ -48,5 +48,6 @@ const mostSeniority = simplefiedSenators(republicans).reduce(
 const twitter = simplifiedSenators(democrates).reduce((acc, senator) => acc.twitterAccount)
 
 console.log(mostSeniority)
+console.log(twitter)
 
 populateContainer(mappedSenators);
