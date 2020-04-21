@@ -1,9 +1,5 @@
 let pokeContainer = document.querySelector('.pokemon')
 
-DButton.addEventListener("click", function ( event ) {
-    document.querySelector("#congressmen").innerHTML = '';
-    DCharacters.forEach(addToDisplay);
-})
 
 function  getPokeData(url) {
     fetch(url).then(function (response) {
@@ -41,14 +37,16 @@ getAPIData('https://pokeapi.co/api/vs/pokemon/?&limit=25').then(
 )
 
 function populatePokeCards(pokeArray) {
-    let pokeCard = document.createElement('div');
+    pokeArray.forEach(pokemon => {
+
+    
+    let pokeScene = document.createElement('div');
     pokeScene.className = 'scene';
     let pokeCard = document.createElement('div');
-    PokeCard.className = 'card';
+    pokeCard.className = 'card';
     pokeCard.addEventListener( 'click', function(){
-        pokeCard.classList.toggle('is-flipped');    
-    })
-    
+        pokeCard.classList.toggle('is-flipped'); 
+    })   
     let pokeFront = document.createElement('div');
     pokeFront.className = 'frontcard__face card__face--front';
     pokeFront.textContent = "Front";
@@ -61,7 +59,9 @@ function populatePokeCards(pokeArray) {
     PokeContent.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
     pokeContainer.appendChild(pokeScene);
+    })
 }
+
 
 /*<div class="scene">
   <div class="card">

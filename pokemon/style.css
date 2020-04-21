@@ -1,8 +1,14 @@
-@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+
 body {
   background: blue;
-  font-family: 'Lily Script One';
   justify-content: space-between;
+}
+
+.pokeContainer {
+  
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .card {
