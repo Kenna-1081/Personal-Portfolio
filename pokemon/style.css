@@ -2,9 +2,7 @@
 body { 
   font-family: sans-serif; 
   margin: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  background-color:tan;
 
 }
 
@@ -61,7 +59,7 @@ transform-style: preserve-3d;
 }
 
 .card__face--back {
-  background:pink;
+  background: pink;
   transform: rotateY(180deg);
 }
 
