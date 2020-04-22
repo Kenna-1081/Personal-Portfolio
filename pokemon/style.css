@@ -37,6 +37,8 @@ transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
   box-shadow: 10px 10px 5px grey;
+  border-width:5px;  
+  border-style:groove;
   
 }
 
@@ -71,15 +73,11 @@ transform-style: preserve-3d;
   width: 150px;
 }
 
-/*.button {
-  height: 50px;
-  width: 100px;
-  border: red;
-}*/
 .button {
   transition-duration: 0.4s;
-  height: 50px;
-  width: 100px;
+  height: 30px;
+  width: 200px;
+  border: thick double #32a1ce;
 }
 
 .button:hover {
