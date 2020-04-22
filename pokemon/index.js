@@ -1,15 +1,15 @@
-let pokeContainer = document.querySelector('.pokemon')
+let pokeContainer = document.querySelector('#pokemon')
 
-DButton.addEventListener("click", function ( event ) {
-    document.querySelector("#congressmen").innerHTML = '';
-    DCharacters.forEach(addToDisplay);
-})
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
 
 function  getPokeData(url) {
     fetch(url).then(function (response) {
         response.json().then(function (pokemon) {
-            console.log(pokemonl.results)
-            populatePokeCards(pokemon.results);
+            console.log(pokemon.results)
+   //         populatePokeCards(pokemon.results);
             //pokeContainer.textContent = pokemon.name;
         })
     })
@@ -28,11 +28,12 @@ async function getAPIData(url) {
     }
 }
 
-getAPIData('https://pokeapi.co/api/vs/pokemon/?&limit=25').then(
+getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25').then(
     (data) => {
         for (const pokemon of data.results) {
             getAPIData(pokemon.url).then(
             (pokeData) => {
+                populatePokeCards(pokeData);
                 console.log(pokeData)
                 }
             )  
@@ -40,28 +41,28 @@ getAPIData('https://pokeapi.co/api/vs/pokemon/?&limit=25').then(
     }
 )
 
-function populatePokeCards(pokeArray) {
-    let pokeCard = document.createElement('div');
+function populatePokeCards(pokeCardData) {
+    
+    let pokeScene = document.createElement('div');
     pokeScene.className = 'scene';
     let pokeCard = document.createElement('div');
-    PokeCard.className = 'card';
+    pokeCard.className = 'card';
     pokeCard.addEventListener( 'click', function(){
-        pokeCard.classList.toggle('is-flipped');    
-    })
-    
+        pokeCard.classList.toggle('is-flipped'); 
+    })   
     let pokeFront = document.createElement('div');
     pokeFront.className = 'frontcard__face card__face--front';
-    pokeFront.textContent = "Front";
+    pokeFront.textContent = "Front NEW";
     let pokeBack = document.createElement('div');
     pokeBack.className = 'back';
     pokeBack.textContent = 'Back!';
 
-    // console.log
-    PokeContent.appendChild(pokeFront);
-    PokeContent.appendChild(pokeBack);
+    pokeCard.appendChild(pokeFront);
+    pokeCard.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
     pokeContainer.appendChild(pokeScene);
 }
+
 
 /*<div class="scene">
   <div class="card">

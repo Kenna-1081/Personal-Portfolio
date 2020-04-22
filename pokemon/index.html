@@ -4,33 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pokemon Page</title>
 </head>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 <body>
-    <div class="card">
-        <div class="content">
-          <div class="front">
-            Front
+    
+        <div class="scene">
+            <div class="card">
+              <div class="card__face card__face--front">front</div>
+              <div class="card__face card__face--back"><div><p>Hi,I'm here on the back</p></div></div>
+            </div>
           </div>
-          <div class="back">
-            Back!
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="front">
-            Hello
-          </div>
-          <div class="back">
-            Back!
-          </div>
-        </div>
-      </div>
-      <button class="button" id="DButton">Democrats</button>
-      <button class="button" id="RButton">Republicans</button>
-      <button class="button" id="IButton">Independent</button>
-      <div id="congressmen">     </div>
+          <p>Click card to flip.</p>
+    
+      <div id="pokemon"></div>
+      <script src="index.js" type="module"></script>
 </body>
 </html>
