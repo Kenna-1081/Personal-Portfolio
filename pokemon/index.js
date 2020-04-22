@@ -42,7 +42,7 @@ getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25').then(
 )
 
 function populatePokeCards(pokeCardData) {
-    
+    console.log(pokeCardData.id, pokeCardData.name);
     let pokeScene = document.createElement('div');
     pokeScene.className = 'scene';
     let pokeCard = document.createElement('div');
@@ -51,11 +51,19 @@ function populatePokeCards(pokeCardData) {
         pokeCard.classList.toggle('is-flipped'); 
     })   
     let pokeFront = document.createElement('div');
-    pokeFront.className = 'frontcard__face card__face--front';
-    pokeFront.textContent = "Front NEW";
+    pokeFront.className = 'card__face card__face--front';
+    //pokeFront.textContent = pokeCardData.name;
+    let img = document.createElement('img');
+    img.className = 'picture';
+    let imgSrc = 'https://pokeres.bastionbot.org/images/pokemon/' + pokeCardData.id + '.png';
+    img.setAttribute('src', imgSrc);
+    let nameSpan = document.createElement('span');
+    nameSpan.textContent = pokeCardData.name;
+    pokeFront.appendChild(img);
+    pokeFront.appendChild(nameSpan);
     let pokeBack = document.createElement('div');
-    pokeBack.className = 'back';
-    pokeBack.textContent = 'Back!';
+    pokeBack.className = 'card__face card__face--back';
+    pokeBack.textContent = pokeCardData.stats;
 
     pokeCard.appendChild(pokeFront);
     pokeCard.appendChild(pokeBack);

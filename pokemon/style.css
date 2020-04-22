@@ -1,10 +1,21 @@
 
-body { font-family: sans-serif; }
+body { 
+  font-family: sans-serif; 
+  margin: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
 
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#pokemon {
+  justify-content: space-around;
 }
 
 
@@ -14,6 +25,7 @@ body { font-family: sans-serif; }
   border: 1px solid #CCC;
   margin: 40px 0;
   perspective: 600px;
+  
 }
 
 .card {
@@ -23,6 +35,8 @@ body { font-family: sans-serif; }
 transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  box-shadow: 10px 10px 5px grey;
+  
 }
 
 .card.is-flipped {
@@ -42,10 +56,16 @@ transform-style: preserve-3d;
 }
 
 .card__face--front {
-  background: red;
+  background: teal;
+  text-shadow: 2px 2px 5px red;
 }
 
 .card__face--back {
-  background: blue;
+  background:pink;
   transform: rotateY(180deg);
+}
+
+.picture {
+  height: 90px;
+  width: 90px;
 }
