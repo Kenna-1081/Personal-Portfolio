@@ -9,13 +9,11 @@ function  getPokeData(url) {
     fetch(url).then(function (response) {
         response.json().then(function (pokemon) {
             console.log(pokemon.results)
-   //         populatePokeCards(pokemon.results);
-            //pokeContainer.textContent = pokemon.name;
         })
     })
 }
 
-//getPokeData("https://pokeapi.co/api/v2/pokemon/1/")
+
 
 async function getAPIData(url) {
     try {
@@ -35,7 +33,6 @@ function displayCards(howmany) {
             getAPIData(pokemon.url).then(
             (pokeData) => {
                 populatePokeCards(pokeData);
-             //   console.log(pokeData)
                 }
             )  
         }
@@ -60,7 +57,6 @@ displayCards(25);
 
 let addCard = document.querySelector('#addCard');
 addCard.addEventListener("click", function ( event ) {
-    //document.querySelector("#pokemon").innerHTML = '';
     displayNewNumberOfCards();
 })
 
@@ -76,7 +72,6 @@ function populatePokeCards(pokeCardData) {
     })   
     let pokeFront = document.createElement('div');
     pokeFront.className = 'card__face card__face--front';
-    //pokeFront.textContent = pokeCardData.name;
     let img = document.createElement('img');
     img.className = 'picture';
     let imgSrc = 'https://pokeres.bastionbot.org/images/pokemon/' + pokeCardData.id + '.png';
@@ -104,11 +99,3 @@ function getDataForBack(pokeCardData) {
     return information;
 }
 
-
-/*<div class="scene">
-  <div class="card">
-    <div class="card__face card__face--front">front</div>
-    <div class="card__face card__face--back"><div><p>Hi,I'm here on the back</p></div></div>
-  </div>
-</div>
-<p>Click card to flip.</p>*/ 
