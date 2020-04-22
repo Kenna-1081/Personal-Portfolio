@@ -56,7 +56,7 @@ function populatePokeCards(pokeArray) {
     pokeBack.className = 'back';
     pokeBack.textContent = 'Back!';
 
-
+    // console.log
     PokeContent.appendChild(pokeFront);
     PokeContent.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
