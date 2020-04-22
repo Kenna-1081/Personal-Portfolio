@@ -1,15 +1,15 @@
-let pokeContainer = document.querySelector('.pokemon')
+let pokeContainer = document.querySelector('#pokemon')
 
-DButton.addEventListener("click", function ( event ) {
-    document.querySelector("#congressmen").innerHTML = '';
-    DCharacters.forEach(addToDisplay);
-})
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
 
 function  getPokeData(url) {
     fetch(url).then(function (response) {
         response.json().then(function (pokemon) {
-            console.log(pokemonl.results)
-            populatePokeCards(pokemon.results);
+            console.log(pokemon.results)
+   //         populatePokeCards(pokemon.results);
             //pokeContainer.textContent = pokemon.name;
         })
     })
@@ -28,11 +28,12 @@ async function getAPIData(url) {
     }
 }
 
-getAPIData('https://pokeapi.co/api/vs/pokemon/?&limit=25').then(
+getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25').then(
     (data) => {
         for (const pokemon of data.results) {
             getAPIData(pokemon.url).then(
             (pokeData) => {
+                populatePokeCards(pokeData);
                 console.log(pokeData)
                 }
             )  
@@ -40,28 +41,36 @@ getAPIData('https://pokeapi.co/api/vs/pokemon/?&limit=25').then(
     }
 )
 
-function populatePokeCards(pokeArray) {
-    let pokeCard = document.createElement('div');
+function populatePokeCards(pokeCardData) {
+    console.log(pokeCardData.id, pokeCardData.name);
+    let pokeScene = document.createElement('div');
     pokeScene.className = 'scene';
     let pokeCard = document.createElement('div');
-    PokeCard.className = 'card';
+    pokeCard.className = 'card';
     pokeCard.addEventListener( 'click', function(){
-        pokeCard.classList.toggle('is-flipped');    
-    })
-    
+        pokeCard.classList.toggle('is-flipped'); 
+    })   
     let pokeFront = document.createElement('div');
-    pokeFront.className = 'frontcard__face card__face--front';
-    pokeFront.textContent = "Front";
+    pokeFront.className = 'card__face card__face--front';
+    //pokeFront.textContent = pokeCardData.name;
+    let img = document.createElement('img');
+    img.className = 'picture';
+    let imgSrc = 'https://pokeres.bastionbot.org/images/pokemon/' + pokeCardData.id + '.png';
+    img.setAttribute('src', imgSrc);
+    let nameSpan = document.createElement('span');
+    nameSpan.textContent = pokeCardData.name;
+    pokeFront.appendChild(img);
+    pokeFront.appendChild(nameSpan);
     let pokeBack = document.createElement('div');
-    pokeBack.className = 'back';
-    pokeBack.textContent = 'Back!';
+    pokeBack.className = 'card__face card__face--back';
+    pokeBack.textContent = pokeCardData.stats;
 
-
-    PokeContent.appendChild(pokeFront);
-    PokeContent.appendChild(pokeBack);
+    pokeCard.appendChild(pokeFront);
+    pokeCard.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
     pokeContainer.appendChild(pokeScene);
 }
+
 
 /*<div class="scene">
   <div class="card">

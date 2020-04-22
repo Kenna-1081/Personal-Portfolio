@@ -1,66 +1,19 @@
-@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
-body {
-  background: blue;
-  font-family: 'Lily Script One';
-  justify-content: space-between;
+
+body { 
+  font-family: sans-serif; 
+  margin: 100px;
+  background-color:tan;
+
 }
-
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  margin: -150px;
-  float: left;
-  perspective: 500px;
-  
-}
-
-.content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-
-.card:hover .content {
-  transform: rotateY( 180deg ) ;
-  transition: transform 0.5s;
-}
-
-.front,
-.back {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: white;
-  line-height: 300px;
-  color: #03446A;
-  text-align: center;
-  font-size: 60px;
-  border-radius: 5px;
-  backface-visibility: hidden;
-}
-
-.back {
-  background: #03446A;
-  color: white;
-  transform: rotateY( 180deg );
-}
-
-
-
-
-/*body { font-family: sans-serif; }
 
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#pokemon {
+  justify-content: space-around;
 }
 
 
@@ -70,6 +23,7 @@ body {
   border: 1px solid #CCC;
   margin: 40px 0;
   perspective: 600px;
+  
 }
 
 .card {
@@ -79,6 +33,8 @@ body {
 transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  box-shadow: 10px 10px 5px grey;
+  
 }
 
 .card.is-flipped {
@@ -98,10 +54,16 @@ transform-style: preserve-3d;
 }
 
 .card__face--front {
-  background: red;
+  background: teal;
+  text-shadow: 2px 2px 5px red;
 }
 
 .card__face--back {
-  background: blue;
+  background: pink;
   transform: rotateY(180deg);
+}
+
+.picture {
+  height: 90px;
+  width: 90px;
 }
