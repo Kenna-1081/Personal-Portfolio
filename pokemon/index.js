@@ -1,4 +1,4 @@
-let pokeContainer = document.querySelector('#pokemon')
+let pokeContainer = document.querySelector('#pokemon');
 
 var card = document.querySelector('.card');
 card.addEventListener( 'click', function() {
@@ -28,18 +28,42 @@ async function getAPIData(url) {
     }
 }
 
-getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25').then(
+function displayCards(howmany) {
+  getAPIData('https://pokeapi.co/api/v2/pokemon/?limit='+howmany).then(
     (data) => {
         for (const pokemon of data.results) {
             getAPIData(pokemon.url).then(
             (pokeData) => {
                 populatePokeCards(pokeData);
-                console.log(pokeData)
+             //   console.log(pokeData)
                 }
             )  
         }
     }
-)
+  );
+}
+
+function clearExistingCards() {
+    pokeContainer.innerHTML = '';
+}
+
+function displayNewNumberOfCards() {
+    clearExistingCards();
+    let counter = document.querySelector('#counter');
+    let howMany = parseInt(counter.textContent)+1;
+    displayCards(howMany);
+    counter.textContent = howMany;
+
+}
+
+displayCards(25);
+
+let addCard = document.querySelector('#addCard');
+addCard.addEventListener("click", function ( event ) {
+    //document.querySelector("#pokemon").innerHTML = '';
+    displayNewNumberOfCards();
+})
+
 
 function populatePokeCards(pokeCardData) {
     console.log(pokeCardData.id, pokeCardData.name);
@@ -63,12 +87,21 @@ function populatePokeCards(pokeCardData) {
     pokeFront.appendChild(nameSpan);
     let pokeBack = document.createElement('div');
     pokeBack.className = 'card__face card__face--back';
-    pokeBack.textContent = pokeCardData.stats;
+    pokeBack.innerHTML = getDataForBack(pokeCardData);
 
     pokeCard.appendChild(pokeFront);
     pokeCard.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
     pokeContainer.appendChild(pokeScene);
+}
+
+function getDataForBack(pokeCardData) {
+    let information = '<div><p>' + pokeCardData.name + ' types:</p>';
+    for (var i=0; i < pokeCardData.types.length; i++) {
+        information += '<p>' + pokeCardData.types[i].type.name + '</p>';
+    }
+    information += '</div>';
+    return information;
 }
 
 
