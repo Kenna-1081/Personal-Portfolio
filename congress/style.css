@@ -1,6 +1,6 @@
-* {
+body {
     background-color: grey;
-    color: green;
+    color: rgb(64, 190, 64);
 
 }
 
@@ -8,5 +8,7 @@
     width: 100px;
     height: 100px;
     color: black;
+    border-color: red;
+    margin: 100px;
     
 }
