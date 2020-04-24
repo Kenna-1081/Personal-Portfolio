@@ -67,7 +67,7 @@ body {
 }
 
 .card__face--back {
-  background: grey;
+  background: rgb(206, 95, 21);
   transform: rotateY(180deg);
   text-shadow: 2px 2px 5px black;
   border-radius: 20px;
@@ -98,4 +98,11 @@ body {
 h1 {
   color: yellow;
   font-style: italic;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
