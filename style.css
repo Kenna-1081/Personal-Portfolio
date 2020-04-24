@@ -56,10 +56,12 @@ figcaption {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    
 }
  #project-list {
      display: flex;
      justify-content: space-around;
+     flex-wrap: wrap;
  }
 
  #contact {

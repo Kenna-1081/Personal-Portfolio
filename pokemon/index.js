@@ -91,7 +91,7 @@ function populatePokeCards(pokeCardData) {
 }
 
 function getDataForBack(pokeCardData) {
-    let information = '<div><p>' + pokeCardData.name + ' types:</p>';
+    let information = '<div><p>' + pokeCardData.name + ' type:</p>';
     for (var i=0; i < pokeCardData.types.length; i++) {
         information += '<p>' + pokeCardData.types[i].type.name + '</p>';
     }
