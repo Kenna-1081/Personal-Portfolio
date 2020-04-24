@@ -91,9 +91,9 @@ function populatePokeCards(pokeCardData) {
 }
 
 function getDataForBack(pokeCardData) {
-    let information = '<div><p>' + pokeCardData.name + ' abilities:</p>';
+    let information = '<div><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/' + pokeCardData.id + '.png"><p>' + pokeCardData.name + '\'s abilities:</p>';
     for (var i=0; i < pokeCardData.abilities.length; i++) {
-        information += '<p>' + pokeCardData.abilities[i].ability.name +'</p>';
+        information += '<p>' + pokeCardData.abilities[i].ability.name +  '</p>';
     }
     
     information += '</div>';
