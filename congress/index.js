@@ -1,5 +1,6 @@
 
 let congressContainer = document.querySelector('.congressContainer')
+
 function getCongressData(url) {
     fetch("../data/senators.js").then(function(response) {
     response.json().then(function(senator) {
