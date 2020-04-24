@@ -63,7 +63,8 @@ function addPersonInformationToTable(person, personNumber) {
     "</h2><br><br>Height: " + person.height + 
     "<br><br>Hair color: " + person.hair_color + 
     "<br><br>Skin Color: " + person.skin_color + 
-    "<br><br>Eye Color: " + person.eye_color + '</td>';
+    "<br><br>Eye Color: " + person.eye_color + 
+    "<br><br>Starships: -->" + '</td>';
 }
   
 function addStarshipInformationToTable(person, personNumber) {
@@ -71,7 +72,7 @@ function addStarshipInformationToTable(person, personNumber) {
     for (var i = 0; i < person.starships.length; i++){
         var shipNumber = getShipNumber(person.starships[i]);
         returnHTML += '<tr>';
-        returnHTML += '<td><h3 class="shipName">' + getStarshipName(shipNumber) + '</h3></td>';
+        //returnHTML += '<td><h3 class="shipName">' + getStarshipName(shipNumber) + '</h3></td>';
         returnHTML += '<td><img class="shipPics" src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt=""><td></tr>';
         //returnHTML += '<td><img class="shipPics" src="https://starwars-visualguide.com/assets/img/starships/' + shipNumber + '.jpg" alt="This is not the image you are looking for"><td></tr>';
     } 

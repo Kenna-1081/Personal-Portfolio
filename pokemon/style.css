@@ -36,9 +36,10 @@ body {
   cursor: pointer;
   position: relative;
   box-shadow: 10px 10px 5px black;
-  border-width:5px;  
+  border-width:8px;  
   border-style:groove;
-  border-radius: 25px;
+  border-radius: 30px;
+  border-color:yellow;
   
 }
 
@@ -65,7 +66,7 @@ body {
 }
 
 .card__face--back {
-  background: rgb(243, 247, 55);
+  background: grey;
   transform: rotateY(180deg);
   text-shadow: 2px 2px 5px black;
   border-radius: 20px;
@@ -81,15 +82,17 @@ body {
   transition-duration: 0.4s;
   height: 30px;
   width: 200px;
-  border: thick double #32a1ce;
+  border: thick double yellow;
   border-radius: 15px;
 }
 
 .button:hover {
   background-color: teal;
   color: white;
+  
 }
 
 h1 {
   color: yellow;
+  font-style: italic;
 }

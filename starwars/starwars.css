@@ -1,5 +1,5 @@
 * {
-    background-color: grey; 
+    background-color: black; 
     color: white;
     scroll-behavior: smooth;
 }
@@ -51,7 +51,5 @@ h3 {
 .shipPics {
     height: 150px;
     width: 150px;
-    margin: 20px;
-    
-
+    margin-left: 100px;
 }
