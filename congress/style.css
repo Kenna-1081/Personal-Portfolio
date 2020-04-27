@@ -1,14 +1,83 @@
 body {
     background-color: grey;
     color: rgb(64, 190, 64);
+    margin: 100px;
 
 }
 
 .congressContainer {
-    width: 100px;
-    height: 100px;
-    color: black;
-    border-color: red;
-    margin: 100px;
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.scene {
+    width: 200px;
+    height: 260px;
+    margin: 40px 0;
+    perspective: 600px;
+    display: flex;
+    
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 10px 10px 5px black; 
+  }
+  
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 35px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+  
+    backface-visibility: hidden;
+  }
+  
+  .card__face--front {
+    background:rgb(51, 51, 163);
+    text-shadow: 2px 2px 5px black;
+    
+  }
+  
+  .card__face--back {
+    background: rgb(194, 9, 9);
+    transform: rotateY(180deg);
+    text-shadow: 2px 2px 5px black;
+    font-size: 1rem;
+    line-height: 20px;
+  }
+  
+  .picture {
+    height: 150px;
+    width: 150px;
+    padding: 20px;
+  }
+  
+  .button {
+    transition-duration: 0.4s;
+    height: 30px;
+    width: 200px;
+    border: thick double yellow;
+    border-radius: 15px;
+  }
+  
+  .button:hover {
+    background-color: teal;
+    color: white;
+    
+  }
+  

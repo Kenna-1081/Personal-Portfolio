@@ -1,18 +1,21 @@
 
+import { senators } from '../data/senators.js';
+
 let congressContainer = document.querySelector('.congressContainer')
 
 function getCongressData(url) {
     fetch("../data/senators.js").then(function(response) {
     response.json().then(function(senator) {
-      //console.log(json)
         congressContainer.textContent = senator.name;
     });
   });
 }
 
-getCongressData("https://api.propublica.org/congress/v1/members/A000360.json")
+getCongressData("/data.senators.js")
 
-/*import { senators } from '../data/senators.js';
+
+
+
 
 const container = document.querySelector('.container');
 
@@ -64,4 +67,4 @@ const twitter = simplifiedSenators(democrates).reduce((acc, senator) => acc.twit
 console.log(mostSeniority)
 
 
-populateContainer(mappedSenators);*/
+populateContainer(mappedSenators);
