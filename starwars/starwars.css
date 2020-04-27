@@ -15,6 +15,8 @@ header, footer {
     height: 40px;
     color: red;
     background-color: black;
+    margin-left: 100px; 
+    
 }
 
 .starwars-body {
@@ -38,7 +40,7 @@ h3 {
 .table {
     display: flex;
     justify-content: space-between;
-    margin: 40px;
+    margin: 100px;
     border-color: black;
     
 }
@@ -52,4 +54,12 @@ h3 {
     height: 150px;
     width: 150px;
     margin-left: 100px;
+    margin-top: 30px;
+}
+
+.starwars_title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
