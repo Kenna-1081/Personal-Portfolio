@@ -1,22 +1,41 @@
 body {
-    background-color: grey;
+    background-color: blue;
     color: white;
     margin: 100px;
 
+}
+
+.blue {
+    background-color: rgb(16, 16, 138);
+    color: white;
+    margin: 100px;
+
+}
+
+.red {
+    background-color: rgb(168, 21, 21);
+    color: white;
+    margin: 100px;
 }
 
 .congressContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-width: 8px;
+    border-style: groove;
+    border-color: gold;
 }
 
 .scene {
-    width: 200px;
+    width: 260px;
     height: 260px;
     margin: 40px 0;
     perspective: 600px;
-    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
     
   }
   
@@ -28,6 +47,9 @@ body {
     cursor: pointer;
     position: relative;
     box-shadow: 10px 10px 5px black; 
+    border-width:8px;  
+    border-style:groove;
+    border-color: goldenrod;
   }
   
   .card.is-flipped {
@@ -62,22 +84,15 @@ body {
   }
   
   .picture {
-    height: 150px;
-    width: 150px;
+    width: 90%;
     padding: 20px;
-  }
-  
-  .button {
-    transition-duration: 0.4s;
-    height: 30px;
-    width: 200px;
-    border: thick double yellow;
-    border-radius: 15px;
-  }
-  
-  .button:hover {
-    background-color: teal;
-    color: white;
     
   }
+
+  .no-display {
+      display: none;
+  }
+
+
+  
   
