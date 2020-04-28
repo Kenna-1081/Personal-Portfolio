@@ -2,11 +2,13 @@ body {
     background-color: blue;
     color: white;
     margin: 100px;
+    background-image: linear-gradient(rgb(16, 16, 138), white)
 
 }
 
 .blue {
     background-color: rgb(16, 16, 138);
+    background-image: linear-gradient(rgb(16, 16, 138), white);
     color: white;
     margin: 100px;
 
@@ -14,6 +16,7 @@ body {
 
 .red {
     background-color: rgb(168, 21, 21);
+    background-image: linear-gradient(rgb(168, 21, 21), white);
     color: white;
     margin: 100px;
 }
@@ -86,6 +89,9 @@ body {
   .picture {
     width: 90%;
     padding: 20px;
+    border-style: groove;
+    border-width: 20px;
+    border-color: gold;
     
   }
 

@@ -2,6 +2,8 @@
     background-color: black; 
     color: white;
     scroll-behavior: smooth;
+    text-align: center;
+    background-image: url("/Images/starry-sky.jpeg");
 }
 
 header, footer {
@@ -15,7 +17,6 @@ header, footer {
     height: 40px;
     color: red;
     background-color: black;
-    margin-left: 100px; 
     
 }
 
@@ -54,6 +55,7 @@ h3 {
     height: 150px;
     width: 150px;
     margin-left: 100px;
+    margin-right: 100px;
     margin-top: 30px;
 }
 
