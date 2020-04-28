@@ -3,8 +3,7 @@ body {
   font-family: sans-serif; 
   margin: 100px;
   background-color: rgb(3, 3, 100);
-  /*background-image: url(/Images/background-clouds.jpeg);*/
-  background-image: linear-gradient(rgb(3, 3, 100),lightblue)
+  background-image: url(/Images/poke-background2.jpeg);
 
 }
 
@@ -38,7 +37,7 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
-  box-shadow: 10px 10px 5px black;
+  box-shadow: 10px 10px 5px rgb(43, 41, 41);
   border-width:8px;  
   border-style:groove;
   border-radius: 30px;
@@ -66,12 +65,14 @@ body {
 
 .card__face--front {
   background:rgb(51, 51, 163);
+  background-image: linear-gradient(darkblue, blue, lightblue);
+  
   text-shadow: 2px 2px 5px black;
   border-radius: 20px;
 }
 
 .card__face--back {
-  background: rgb(206, 95, 21);
+  background-image: linear-gradient( rgb(241, 191, 26), white);
   transform: rotateY(180deg);
   text-shadow: 2px 2px 5px black;
   border-radius: 20px;
