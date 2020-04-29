@@ -12,17 +12,21 @@ header, footer {
 
 }
 .button {
-    
     width: 200px;
     height: 40px;
-    color: red;
+    cursor: pointer;
+    color:gold;
     background-color: black;
     
 }
 
+.button:hover {
+    color: red;
+  }
+
 .starwars-body {
     width: 100%;
-    margin: 51px;
+    
 }
 
 .characterPic {
